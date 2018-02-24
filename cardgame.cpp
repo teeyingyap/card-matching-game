@@ -10,7 +10,7 @@ using namespace std;
 
 struct PokerCard
 {
-	string rank;
+	char rank;
 	int suit;
 	int colour;
 };
@@ -33,7 +33,7 @@ int main()
 	{
 		int playerTurn = 1;
 		int player1Score = 0, player2Score = 0;
-		string RANK[] = {"J", "Q", "K", "A"};
+		char RANK[] = {'J', 'Q', 'K', 'A'};
 		int SUIT[] = {6, 3, 5, 4}; // Spade, Heart, Club, Diamond
 		int COLOUR[] = {1, 2}; // 1 = black, 2 = red
 		bool endRound = false;
@@ -212,9 +212,9 @@ void flipCard(vector<int>& matchedV, int card1, int card2, vector<PokerCard>& v,
 	system("cls");
 	string format_faceUp[] = {
 		"+---+",	// row = 0
-		"|%s  |",	// row = 1 
+		"|%c  |",	// row = 1 
 		"| %c |",	// row = 2
-		"|  %s|",	// row = 3
+		"|  %c|",	// row = 3
 		"+---+"		// row = 4
 	};
 
@@ -257,7 +257,7 @@ void flipCard(vector<int>& matchedV, int card1, int card2, vector<PokerCard>& v,
 				if (card1 != 0 && c == card1 - 1)
 				{
 					if (r == 1 || r == 3)
-						printf(format_faceUp[r].c_str(), v[card1 - 1].rank.c_str());
+						printf(format_faceUp[r].c_str(), v[card1 - 1].rank);
 					else if(r == 2)
 						printf(format_faceUp[r].c_str(), v[card1 - 1].suit);
 					else
@@ -266,7 +266,7 @@ void flipCard(vector<int>& matchedV, int card1, int card2, vector<PokerCard>& v,
 				else if(card2 != 0 && c == card2 - 1)
 				{
 					if (r == 1 || r == 3)
-						printf(format_faceUp[r].c_str(), v[card2 - 1].rank.c_str());
+						printf(format_faceUp[r].c_str(), v[card2 - 1].rank);
 					else if(r == 2)
 						printf(format_faceUp[r].c_str(), v[card2 - 1].suit);
 					else
@@ -304,7 +304,7 @@ void flipCard(vector<int>& matchedV, int card1, int card2, vector<PokerCard>& v,
 				if (card1 != 0 && c == card1 - 1)
 				{
 					if (r == 1 || r == 3)
-						printf(format_faceUp[r].c_str(), v[card1 - 1].rank.c_str());
+						printf(format_faceUp[r].c_str(), v[card1 - 1].rank);
 					else if(r == 2)
 						printf(format_faceUp[r].c_str(), v[card1 - 1].suit);
 					else
@@ -313,7 +313,7 @@ void flipCard(vector<int>& matchedV, int card1, int card2, vector<PokerCard>& v,
 				else if(card2 != 0 && c == card2 - 1)
 				{
 					if (r == 1 || r == 3)
-						printf(format_faceUp[r].c_str(), v[card2 - 1].rank.c_str());
+						printf(format_faceUp[r].c_str(), v[card2 - 1].rank);
 					else if(r == 2)
 						printf(format_faceUp[r].c_str(), v[card2 - 1].suit);
 					else
